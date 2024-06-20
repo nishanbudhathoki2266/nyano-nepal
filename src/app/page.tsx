@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import Description from "@/components/ui/common/Description";
+import Heading from "@/components/ui/common/Heading";
 import Container from "@/components/ui/containers/Container";
 import GridContainer from "@/components/ui/containers/GridContainer";
 import React from "react";
@@ -8,17 +10,17 @@ const Home = () => {
     <main>
       <Container size="sm">
         <GridContainer>
-          <main className="col-span-full min-h-screen flex flex-col justify-center items-start gap-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold capitalize">
-              Donate surplus clothes today
-            </h1>
-            <p className="text-sm md:text-base lg:text-lg max-w-6xl">
+          <main className="col-span-full min-h-screen flex flex-col justify-center items-start gap-4">
+            <Heading isHero>Donate surplus clothes today</Heading>
+            <Description className="max-w-6xl">
               Transform Nepali lives by donating your gently used clothes
               through our platform. Help us spread warmth and support to those
               in need across Nepal. Together, we can make a meaningful
               difference.
-            </p>
-            <Button size="xl">Ignite Hope</Button>
+            </Description>
+            <Button size="xl" className="mt-2">
+              Ignite Hope
+            </Button>
           </main>
         </GridContainer>
       </Container>
