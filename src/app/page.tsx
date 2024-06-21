@@ -11,14 +11,15 @@ import stats from "@/content/Stats";
 import Image from "next/image";
 import React from "react";
 import ServicesCard from "@/components/ui/common/ServicesCard";
+import projects from "@/content/Projects";
 
 const Home = () => {
   return (
     <>
-      <main className="pt-6 pb-8">
+      <main className="pt-6 pb-8 bg-gray-200">
         <Container
           size="sm"
-          className="col-span-full min-h-[90dvh] flex flex-col justify-center items-start gap-4"
+          className="col-span-full min-h-screen flex flex-col justify-center items-start gap-4"
         >
           <Heading isHero>{hero.title}</Heading>
           <Description className="max-w-6xl">{hero.description}</Description>
@@ -38,7 +39,7 @@ const Home = () => {
         </Container>
       </main>
 
-      <section className="py-8 lg:py-20 bg-gray-200">
+      <section className="py-8 lg:py-20">
         <Container size="sm">
           <GridContainer>
             <div className="flex flex-col justify-center items-start gap-4 col-span-full xl:col-span-4">
@@ -67,10 +68,10 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className="py-8 lg:py-20">
+      <section className="py-8 lg:py-20 bg-gray-200">
         <Container size="sm">
           <GridContainer>
-            <Heading className="col-span-full text-center mb-8">
+            <Heading className="col-span-full text-center mb-2">
               {services.title}
             </Heading>
 
@@ -81,6 +82,36 @@ const Home = () => {
                 title={service.title}
                 description={service.description}
               />
+            ))}
+          </GridContainer>
+        </Container>
+      </section>
+
+      <section className="py-8 lg:py-20">
+        <Container size="sm">
+          <GridContainer>
+            <Heading className="col-span-full mb-2">{projects.title}</Heading>
+
+            {projects.projects.map((project) => (
+              <div
+                key={project.id}
+                className="col-span-full md:col-span-2 lg:col-span-6"
+              >
+                <figure className="relative aspect-video overflow-hidden rounded-md">
+                  <Image
+                    src={project.image.src}
+                    alt={project.image.alt}
+                    fill
+                    objectFit="cover"
+                  />
+                </figure>
+                <h2 className="mt-2 mb-1 text-2xl rounded-sm font-medium">
+                  {project.title}
+                </h2>
+                <Description className="lg:!text-base">
+                  {project.description}
+                </Description>
+              </div>
             ))}
           </GridContainer>
         </Container>
