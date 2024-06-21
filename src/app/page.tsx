@@ -6,58 +6,86 @@ import Container from "@/components/ui/containers/Container";
 import GridContainer from "@/components/ui/containers/GridContainer";
 import about from "@/content/About";
 import hero from "@/content/Hero";
+import services from "@/content/Services";
 import stats from "@/content/Stats";
 import Image from "next/image";
 import React from "react";
+import ServicesCard from "@/components/ui/common/ServicesCard";
 
 const Home = () => {
   return (
-    <Container size="sm">
-      <main className="col-span-full min-h-screen flex flex-col justify-center items-start gap-4 py-6 lg:py-8">
-        <Heading isHero>{hero.title}</Heading>
-        <Description className="max-w-6xl">{hero.description}</Description>
-        <Button size="xl" className="mt-2">
-          {hero.cta.text}
-        </Button>
+    <>
+      <main className="pt-6 pb-8">
+        <Container
+          size="sm"
+          className="col-span-full min-h-[90dvh] flex flex-col justify-center items-start gap-4"
+        >
+          <Heading isHero>{hero.title}</Heading>
+          <Description className="max-w-6xl">{hero.description}</Description>
+          <Button size="xl" className="mt-2">
+            {hero.cta.text}
+          </Button>
 
-        <GridContainer className="mt-8 w-full mx-auto">
-          {stats.map((stat) => (
-            <StatsCard
-              key={stat.id}
-              stat={stat.stat}
-              description={stat.description}
-            />
-          ))}
-        </GridContainer>
+          <GridContainer className="mt-8 w-full mx-auto">
+            {stats.map((stat) => (
+              <StatsCard
+                key={stat.id}
+                stat={stat.stat}
+                description={stat.description}
+              />
+            ))}
+          </GridContainer>
+        </Container>
       </main>
 
-      <section className="py-6 lg:py-8">
-        <GridContainer>
-          <div className="flex flex-col justify-center items-start gap-4 col-span-full xl:col-span-4">
-            <Heading>{about.title}</Heading>
-            <Description>
-              <strong>
-                {about.description.split(" ").slice(0, 2).join(" ")}
-              </strong>{" "}
-              {about.description.split(" ").slice(2).join(" ")}
-            </Description>
+      <section className="py-8 lg:py-20 bg-gray-200">
+        <Container size="sm">
+          <GridContainer>
+            <div className="flex flex-col justify-center items-start gap-4 col-span-full xl:col-span-4">
+              <Heading>{about.title}</Heading>
+              <Description>
+                <strong>
+                  {about.description.split(" ").slice(0, 2).join(" ")}
+                </strong>{" "}
+                {about.description.split(" ").slice(2).join(" ")}
+              </Description>
 
-            <Button size="xl" className="mt-2">
-              {about.cta.text}
-            </Button>
-          </div>
+              <Button size="xl" className="mt-2">
+                {about.cta.text}
+              </Button>
+            </div>
 
-          {about.images.map((image) => (
-            <figure
-              key={image.id}
-              className="relative aspect-square overflow-hidden rounded-md col-span-full md:col-span-2 lg:col-span-6 xl:col-span-4"
-            >
-              <Image src={image.src} alt={image.alt} fill objectFit="cover" />
-            </figure>
-          ))}
-        </GridContainer>
+            {about.images.map((image) => (
+              <figure
+                key={image.id}
+                className="relative aspect-square overflow-hidden rounded-md col-span-full md:col-span-2 lg:col-span-6 xl:col-span-4"
+              >
+                <Image src={image.src} alt={image.alt} fill objectFit="cover" />
+              </figure>
+            ))}
+          </GridContainer>
+        </Container>
       </section>
-    </Container>
+
+      <section className="py-8 lg:py-20">
+        <Container size="sm">
+          <GridContainer>
+            <Heading className="col-span-full text-center mb-8">
+              {services.title}
+            </Heading>
+
+            {services.services.map((service) => (
+              <ServicesCard
+                key={service.id}
+                icon={<service.icon />}
+                title={service.title}
+                description={service.description}
+              />
+            ))}
+          </GridContainer>
+        </Container>
+      </section>
+    </>
   );
 };
 
