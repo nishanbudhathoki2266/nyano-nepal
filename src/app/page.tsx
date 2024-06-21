@@ -12,6 +12,7 @@ import Image from "next/image";
 import React from "react";
 import ServicesCard from "@/components/ui/common/ServicesCard";
 import projects from "@/content/Projects";
+import ProjectsCard from "@/components/ui/common/ProjectsCard";
 
 const Home = () => {
   return (
@@ -93,25 +94,12 @@ const Home = () => {
             <Heading className="col-span-full mb-2">{projects.title}</Heading>
 
             {projects.projects.map((project) => (
-              <div
+              <ProjectsCard
                 key={project.id}
-                className="col-span-full md:col-span-2 lg:col-span-6"
-              >
-                <figure className="relative aspect-video overflow-hidden rounded-md">
-                  <Image
-                    src={project.image.src}
-                    alt={project.image.alt}
-                    fill
-                    objectFit="cover"
-                  />
-                </figure>
-                <h2 className="mt-2 mb-1 text-2xl rounded-sm font-medium">
-                  {project.title}
-                </h2>
-                <Description className="lg:!text-base">
-                  {project.description}
-                </Description>
-              </div>
+                image={project.image}
+                title={project.title}
+                description={project.description}
+              />
             ))}
           </GridContainer>
         </Container>
