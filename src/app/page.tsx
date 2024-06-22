@@ -14,6 +14,8 @@ import ServicesCard from "@/components/ui/common/ServicesCard";
 import projects from "@/content/Projects";
 import ProjectsCard from "@/components/ui/common/ProjectsCard";
 import partners from "@/content/Partners";
+import PartnersCard from "@/components/ui/common/PartnersCard";
+import contact from "@/content/Contact";
 
 const Home = () => {
   return (
@@ -114,18 +116,51 @@ const Home = () => {
             </Heading>
 
             {partners.partners.map((partner) => (
-              <div
+              <PartnersCard
                 key={partner.id}
-                className="relative aspect-square col-span-2 sm:col-span-1 lg:col-span-3 xl:col-span-2"
-              >
-                <Image
-                  src={partner.image.src}
-                  alt={partner.image.alt}
-                  fill
-                  objectFit="cover"
-                />
-              </div>
+                src={partner.image.src}
+                alt={partner.image.alt}
+              />
             ))}
+          </GridContainer>
+        </Container>
+      </section>
+
+      <section className="py-8 lg:py-20">
+        <Container size="sm">
+          <GridContainer>
+            <div className="relative col-span-full md:col-span-6 aspect-square rounded-md overflow-hidden">
+              <Image
+                src={contact.image.src}
+                alt={contact.image.alt}
+                fill
+                objectFit="cover"
+              />
+            </div>
+            <div className="col-span-full md:col-span-6 aspect-square flex flex-col justify-center gap-4">
+              <Heading>{contact.title}</Heading>
+              <Description>{contact.description}</Description>
+              <Description className="flex flex-col justify-center !text-base font-normal">
+                <span>
+                  {contact.address.tole}, {contact.address.city}-
+                  {contact.address.ward}
+                </span>
+                <span>Province {contact.address.province}</span>
+                <span>Postal code: {contact.address.postal}</span>
+              </Description>
+              <Description className="flex flex-col justify-center !text-base font-normal">
+                <span>{contact.info.phone}</span>
+                <span>{contact.info.email}</span>
+              </Description>
+
+              <div className="flex items-center gap-2">
+                {contact.socials.map((social) => (
+                  <span key={social.id} className="cursor-pointer">
+                    <social.icon size={22} strokeWidth={2.5} />
+                  </span>
+                ))}
+              </div>
+            </div>
           </GridContainer>
         </Container>
       </section>
