@@ -13,6 +13,7 @@ import React from "react";
 import ServicesCard from "@/components/ui/common/ServicesCard";
 import projects from "@/content/Projects";
 import ProjectsCard from "@/components/ui/common/ProjectsCard";
+import partners from "@/content/Partners";
 
 const Home = () => {
   return (
@@ -100,6 +101,30 @@ const Home = () => {
                 title={project.title}
                 description={project.description}
               />
+            ))}
+          </GridContainer>
+        </Container>
+      </section>
+
+      <section className="py-8 lg:py-20 bg-gray-200">
+        <Container size="sm">
+          <GridContainer>
+            <Heading className="col-span-full text-center mb-2">
+              {partners.title}
+            </Heading>
+
+            {partners.partners.map((partner) => (
+              <div
+                key={partner.id}
+                className="relative aspect-square col-span-2 sm:col-span-1 lg:col-span-3 xl:col-span-2"
+              >
+                <Image
+                  src={partner.image.src}
+                  alt={partner.image.alt}
+                  fill
+                  objectFit="cover"
+                />
+              </div>
             ))}
           </GridContainer>
         </Container>

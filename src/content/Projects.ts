@@ -1,9 +1,5 @@
-import { ContainerIcon, Shirt, Sparkles, Users } from "lucide-react";
-
 const projects = {
   title: "Featured Projects",
-  description:
-    "Nyano Nepal is a platform dedicated to transforming lives in Nepal by collecting and distributing surplus clothing and essentials. Our mission is to provide warmth and hope to those in need. Join us in making a meaningful impact through community donations.",
   projects: [
     {
       id: 1,
