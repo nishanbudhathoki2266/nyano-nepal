@@ -140,7 +140,7 @@ const Home = () => {
             <div className="col-span-full md:col-span-6 aspect-square flex flex-col justify-center gap-4">
               <Heading>{contact.title}</Heading>
               <Description>{contact.description}</Description>
-              <Description className="flex flex-col justify-center !text-base font-normal">
+              <Description className="flex flex-col justify-center !text-base font-mono">
                 <span>
                   {contact.address.tole}, {contact.address.city}-
                   {contact.address.ward}
@@ -148,16 +148,19 @@ const Home = () => {
                 <span>Province {contact.address.province}</span>
                 <span>Postal code: {contact.address.postal}</span>
               </Description>
-              <Description className="flex flex-col justify-center !text-base font-normal">
+              <Description className="flex flex-col justify-center !text-base font-mono">
                 <span>{contact.info.phone}</span>
                 <span>{contact.info.email}</span>
               </Description>
 
               <div className="flex items-center gap-2">
                 {contact.socials.map((social) => (
-                  <span key={social.id} className="cursor-pointer">
-                    <social.icon size={22} strokeWidth={2.5} />
-                  </span>
+                  <social.icon
+                    key={social.id}
+                    size={22}
+                    strokeWidth={2.5}
+                    className="cursor-pointer"
+                  />
                 ))}
               </div>
             </div>
