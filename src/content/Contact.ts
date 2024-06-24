@@ -9,16 +9,16 @@ const contact = {
     alt: "Sherpa kids smiling at the camera. Designed By FreePik.",
   },
   address: {
-    tole: "Tribhuwan Chowk",
+    tole: "Tarahara Chowk",
     city: "Itahari",
-    ward: 2,
+    ward: 24,
     district: "Sunsari",
     province: 1,
     postal: 56705,
   },
   info: {
-    phone: "+9779810479027",
-    email: "nishanbudhathoki2266@gmail.com",
+    phone: "+9779856478568",
+    email: "devnin@gmail.com",
   },
   socials: [
     { id: 1, icon: Facebook },

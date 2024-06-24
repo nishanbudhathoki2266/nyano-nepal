@@ -16,6 +16,8 @@ import ProjectsCard from "@/components/ui/common/ProjectsCard";
 import partners from "@/content/Partners";
 import PartnersCard from "@/components/ui/common/PartnersCard";
 import contact from "@/content/Contact";
+import Link from "next/link";
+import SiteWide from "@/components/ui/common/SiteWide";
 
 const Home = () => {
   return (
@@ -137,7 +139,7 @@ const Home = () => {
                 objectFit="cover"
               />
             </div>
-            <div className="col-span-full md:col-span-6 aspect-square flex flex-col justify-center gap-4">
+            <div className="col-span-full md:col-span-6 flex flex-col justify-center gap-4">
               <Heading>{contact.title}</Heading>
               <Description>{contact.description}</Description>
               <Description className="flex flex-col justify-center !text-base font-mono">
@@ -167,6 +169,12 @@ const Home = () => {
           </GridContainer>
         </Container>
       </section>
+
+      <footer className="py-8 lg:py-20">
+        <Container size="sm">
+          <SiteWide />
+        </Container>
+      </footer>
     </>
   );
 };
