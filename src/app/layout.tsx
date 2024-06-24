@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Nyano Nepal",
     images: [
       {
-        url: "/images/sherpa-kids.jpg",
+        url: "/_next/image?url=%2Fimages%2Fsherpa-kids.jpg&amp;w=640&amp;q=75 640w",
         width: 800,
         height: 600,
         alt: "Children in Nepal receiving donations",
