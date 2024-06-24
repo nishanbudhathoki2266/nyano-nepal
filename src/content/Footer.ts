@@ -54,6 +54,27 @@ const footers = [
       },
     ],
   },
+  {
+    heading: "Platform",
+    links: [
+      {
+        link: "Sign Up",
+        href: "#",
+      },
+      {
+        link: "Login",
+        href: "#",
+      },
+      {
+        link: "Become an Agent",
+        href: "#",
+      },
+      {
+        link: "Sponsor",
+        href: "#",
+      },
+    ],
+  },
 ];
 
 export default footers;

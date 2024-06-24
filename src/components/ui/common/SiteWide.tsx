@@ -12,7 +12,7 @@ const SiteWide = () => {
     <GridContainer>
       {footers.map((footer) => (
         <div
-          className="col-span-full md:col-span-2 lg:col-span-4 flex flex-col justify-start"
+          className="col-span-full md:col-span-2 lg:col-span-3 flex flex-col justify-start"
           key={footer.heading}
         >
           <Heading isTertiary className="mb-4">
@@ -23,7 +23,10 @@ const SiteWide = () => {
             {footer.links
               ? footer.links.map((link) => (
                   <li key={link.link}>
-                    <Link href={link.href} className="text-sm md:text-base">
+                    <Link
+                      href={link.href}
+                      className="text-sm md:text-base hover:underline underline-offset-2"
+                    >
                       {link.link}
                     </Link>
                   </li>
